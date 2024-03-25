@@ -111,7 +111,7 @@ export const vectorSearchRouter = createTRPCRouter({
           .withLimit(5)
           .do();
 
-        return res;
+        return res.data.Get["Product"];
       } catch (e) {
         throw new TRPCError({
           code: "INTERNAL_SERVER_ERROR",
@@ -120,7 +120,7 @@ export const vectorSearchRouter = createTRPCRouter({
       }
     }),
 
-  // get recommendations for specific product
+  // get recommendations for specific product iD
   getRecommendations: publicProcedure
     .input(z.object({ id: z.string().uuid() }))
     .query(async ({ input }) => {
@@ -136,9 +136,9 @@ export const vectorSearchRouter = createTRPCRouter({
             id,
             certainty: 0.6,
           })
-          .withLimit(5)
+          .withLimit(6)
           .do();
-        return recommendations;
+        return recommendations.data.Get["Product"].slice(1, -1);
       } catch (e) {
         throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: e });
       }
