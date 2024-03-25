@@ -8,6 +8,7 @@ import { productClass } from "~/lib/weaviate_schema";
 const client = getWeaviateClient();
 
 export const vectorSearchRouter = createTRPCRouter({
+  // Deletes Product schema in Weaviate
   deleteAllProducts: publicProcedure.mutation(async () => {
     try {
       await client.schema.classDeleter().withClassName("Product").do();
@@ -82,6 +83,7 @@ export const vectorSearchRouter = createTRPCRouter({
     return products;
   }),
 
+  // search relevant products by query
   search: publicProcedure
     .input(
       z.object({
@@ -117,6 +119,8 @@ export const vectorSearchRouter = createTRPCRouter({
         });
       }
     }),
+
+  // get recommendations for specific product
   getRecommendations: publicProcedure
     .input(z.object({ id: z.string().uuid() }))
     .query(async ({ input }) => {

@@ -1,5 +1,29 @@
 # Create T3 App
 
+## Populate Weaviate with dummy data
+
+initialize python packages:
+```
+python3 -m venv venv
+source env/bin/activate
+pip install -r requirements.txt
+python3 data-pipeline/populate.py
+```
+
+## Run project
+1. copy `.env` file to directory
+2. 
+```
+pnpm install
+npm run dev
+```
+
+## Test tRPC endpoints
+```
+http://localhost:3000/api/panel
+```
+
+
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
 ## What's next? How do I make an app with this?
