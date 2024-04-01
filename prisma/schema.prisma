@@ -52,7 +52,6 @@ model User {
     sessions      Session[]
     isVendor      Boolean   @default(false)
     vendorStore   VendorStore?
-    vendorStoreId String?
 }
 
 

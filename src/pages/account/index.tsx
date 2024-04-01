@@ -8,7 +8,7 @@ function AccountPage() {
   if (isLoading) return <div>Loading...</div>;
   return (
     <>
-      <div className="">{!user?.isVendor && <CreateStore />}</div>
+      <div className="">{user?.isVendor && <CreateStore />}</div>
     </>
   );
 }

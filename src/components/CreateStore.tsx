@@ -3,13 +3,11 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -21,13 +19,9 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/form";
-
-import { z } from "zod";
-
-const storeSchema = z.object({
-  name: z.string().min(2).max(50),
-  description: z.string().min(50).max(200),
-});
+import { storeSchema } from "~/utils/formSchema";
+import { type z } from "zod";
+import { api } from "~/utils/api";
 
 export default function AccountPage() {
   const form = useForm<z.infer<typeof storeSchema>>({
@@ -38,8 +32,9 @@ export default function AccountPage() {
     },
   });
 
+  const { mutate: CreateStore } = api.vendorStore.create.useMutation();
   function onSubmit(values: z.infer<typeof storeSchema>) {
-    console.log(values);
+    CreateStore(values);
   }
   return (
     <Dialog>

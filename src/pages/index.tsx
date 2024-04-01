@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "~/components/Navbar";
 
 import { api } from "~/utils/api";
+import { Button } from "~/components/ui/button";
 
 export default function Home() {
   // const products = api.products.getProductList.useQuery();
@@ -15,7 +16,10 @@ export default function Home() {
         <meta name="description" content="Multi vendor Ecommerce app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>main page</main>
+      <main className="flex h-full gap-3">
+        <Button onClick={() => signIn()}>SignIn</Button>
+        <Button onClick={() => signOut()}>Sign Out</Button>
+      </main>
     </>
   );
 }
