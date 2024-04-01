@@ -58,7 +58,7 @@ model User {
 
 model VendorStore {
 id          String   @id @default(cuid())
-name        String
+name        String   @unique
 description String
 user        User     @relation(fields: [userId], references: [id])
 userId      String @unique

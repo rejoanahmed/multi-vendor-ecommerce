@@ -9,7 +9,9 @@ function Navbar() {
   const user = data?.user;
   return (
     <nav className="flex h-14 items-center border px-10 py-1">
-      <Image src="/logo.png" alt="logo" width={120} height={30} />
+      <Link href="/">
+        <Image src="/logo.png" alt="logo" width={120} height={30} />
+      </Link>
       {user && (
         <Link href="/account" className="ml-auto">
           <Avatar>

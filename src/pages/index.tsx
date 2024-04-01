@@ -15,9 +15,7 @@ export default function Home() {
         <meta name="description" content="Multi vendor Ecommerce app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Navbar />
-      </main>
+      <main>main page</main>
     </>
   );
 }
