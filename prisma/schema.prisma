@@ -14,17 +14,6 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    createdBy   User   @relation(fields: [createdById], references: [id])
-    createdById String
-
-    @@index([name])
-}
 
 // Necessary for Next auth
 model Account {
@@ -61,7 +50,36 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    posts         Post[]
+    isVendor      Boolean   @default(false)
+    vendorStore   VendorStore?
+    vendorStoreId String?
+}
+
+
+model VendorStore {
+id          String   @id @default(cuid())
+name        String
+description String
+user        User     @relation(fields: [userId], references: [id])
+userId      String @unique
+products    Product[]
+}
+
+model Product {
+    id          String        @id @default(cuid())
+    name        String
+    description String
+    price       Float
+    store       VendorStore   @relation(fields: [storeId], references: [id])
+    storeId     String
+    images      Image[]
+}
+
+model Image {
+    id       String   @id @default(cuid())
+    url      String
+    product  Product  @relation(fields: [productId], references: [id])
+    productId String
 }
 
 model VerificationToken {
