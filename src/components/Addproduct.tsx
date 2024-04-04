@@ -24,6 +24,7 @@ import { z } from "zod";
 import { api } from "~/utils/api";
 import { Textarea } from "~/components/ui/textarea";
 import { Upload, X } from "lucide-react";
+import { uploadImage } from "~/utils/firestorage";
 
 const ACCEPTED_IMAGE_TYPES = ["image/png", "image/jpg", "image/jpeg"];
 const MAX_IMAGE_SIZE = 10; //In MegaBytes
@@ -64,8 +65,12 @@ function Addproduct() {
 
   const { mutate: CreateProduct } = api.products.create.useMutation();
 
-  function onSubmit(values: z.infer<typeof schema>) {
+  async function onSubmit(values: z.infer<typeof schema>) {
     console.log(values);
+    for (const image of values.images) {
+      const imageUrl = await uploadImage(image);
+      console.log(imageUrl);
+    }
   }
 
   const images = form.watch("images");
