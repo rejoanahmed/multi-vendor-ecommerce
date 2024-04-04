@@ -1,39 +1,36 @@
-import { z } from "zod";
-
-import {
-  createTRPCRouter,
-  protectedProcedure,
-  publicProcedure,
-} from "~/server/api/trpc";
+import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
+import { addProductSchema } from "~/utils/formSchema";
 
 export const productRouter = createTRPCRouter({
-  hello: publicProcedure
-    .input(z.object({ text: z.string() }))
-    .query(({ input }) => {
-      return {
-        greeting: `Hello ${input.text}`,
-      };
+  create: protectedProcedure
+    .input(addProductSchema)
+    .mutation(async ({ ctx, input }) => {
+      const store = await ctx.db.vendorStore.findFirst({
+        where: {
+          userId: ctx.session.user.id,
+        },
+      });
+
+      if (!store) {
+        throw new Error("Store not found");
+      }
+
+      return ctx.db.product.create({
+        data: {
+          name: input.name,
+          description: input.description,
+          price: input.price,
+          images: {
+            create: input.images.map((url) => ({
+              url,
+            })),
+          },
+          store: {
+            connect: {
+              id: store?.id,
+            },
+          },
+        },
+      });
     }),
-
-  // create: protectedProcedure
-  //   .input(z.object({ name: z.string().min(1) }))
-  //   .mutation(async ({ ctx, input }) => {
-  //     // simulate a slow db call
-  //     await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  //     return ctx.db.post.create({
-  //       data: {
-  //         name: input.name,
-  //         createdBy: { connect: { id: ctx.session.user.id } },
-  //       },
-  //     });
-  //   }),
-
-  getProductList: protectedProcedure.query(({ ctx }) => {
-    return ctx.db.user.findFirst({});
-  }),
-
-  getSecretMessage: protectedProcedure.query(() => {
-    return "you can now see this secret message!";
-  }),
 });

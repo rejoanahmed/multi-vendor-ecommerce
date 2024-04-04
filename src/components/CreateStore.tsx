@@ -22,8 +22,10 @@ import {
 import { storeSchema } from "~/utils/formSchema";
 import { type z } from "zod";
 import { api } from "~/utils/api";
+import { useState } from "react";
 
 export default function AccountPage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const form = useForm<z.infer<typeof storeSchema>>({
     resolver: zodResolver(storeSchema),
     defaultValues: {
@@ -35,9 +37,10 @@ export default function AccountPage() {
   const { mutate: CreateStore } = api.vendorStore.create.useMutation();
   function onSubmit(values: z.infer<typeof storeSchema>) {
     CreateStore(values);
+    setIsDialogOpen(false);
   }
   return (
-    <Dialog>
+    <Dialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)}>
       <DialogTrigger asChild>
         <Button variant="outline">Create a Store</Button>
       </DialogTrigger>

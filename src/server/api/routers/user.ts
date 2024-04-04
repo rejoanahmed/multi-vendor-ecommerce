@@ -26,6 +26,9 @@ export const userRouter = createTRPCRouter({
       where: {
         id: ctx.session.user.id,
       },
+      include: {
+        vendorStore: true,
+      },
     });
   }),
 
