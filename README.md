@@ -1,8 +1,8 @@
-# DigitalHippo - A Modern Fullstack E-Commerce Marketplace for Digital Products
+# mutlistore - A Modern Fullstack E-Commerce Marketplace for Digital Products
 
 Built with the Next.js 14 App Router, tRPC, TypeScript, Payload & Tailwind
 
-![Project Image](https://github.com/joschan21/digitalhippo/blob/master/public/thumbnail.jpg)
+![Project Image](https://github.com/joschan21/mutlistore/blob/master/public/thumbnail.jpg)
 
 ## Features
 
@@ -25,7 +25,7 @@ Built with the Next.js 14 App Router, tRPC, TypeScript, Payload & Tailwind
 To get started with this project, run
 
 ```bash
-  git clone https://github.com/joschan21/digitalhippo.git
+  git clone https://github.com/joschan21/mutlistore.git
 ```
 
 and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
@@ -33,7 +33,7 @@ and copy the .env.example variables into a separate .env file, fill them out & a
 
 ## Acknowledgements
 
-- [Payload](https://link.joshtriedcoding.com/payload) for making this project possible
+- [Payload](https://link.multistore.com/payload) for making this project possible
 
 ## License
 

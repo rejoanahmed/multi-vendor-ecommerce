@@ -27,8 +27,8 @@ export function formatPrice(
 }
 
 export function constructMetadata({
-  title = 'DigitalHippo - the marketplace for digital assets',
-  description = 'DigitalHippo is an open-source marketplace for high-quality digital goods.',
+  title = 'mutlistore - the marketplace for digital assets',
+  description = 'mutlistore is an open-source marketplace for high-quality digital goods.',
   image = '/thumbnail.png',
   icons = '/favicon.ico',
   noIndex = false,
@@ -56,10 +56,10 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: '@joshtriedcoding',
+      creator: '@multistore',
     },
     icons,
-    metadataBase: new URL('https://digitalhippo.up.railway.app'),
+    metadataBase: new URL('https://mutlistore.up.railway.app'),
     ...(noIndex && {
       robots: {
         index: false,
