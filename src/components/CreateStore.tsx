@@ -40,7 +40,7 @@ export default function AccountPage() {
     setIsDialogOpen(false);
   }
   return (
-    <Dialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)}>
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="outline">Create a Store</Button>
       </DialogTrigger>
