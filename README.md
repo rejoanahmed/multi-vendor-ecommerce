@@ -1,29 +1,40 @@
-# Create T3 App
+# DigitalHippo - A Modern Fullstack E-Commerce Marketplace for Digital Products
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Built with the Next.js 14 App Router, tRPC, TypeScript, Payload & Tailwind
 
-## What's next? How do I make an app with this?
+![Project Image](https://github.com/joschan21/digitalhippo/blob/master/public/thumbnail.jpg)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Features
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- 🛠️ Complete marketplace built from scratch in Next.js 14
+- 💻 Beautiful landing page & product pages included
+- 🎨 Custom artwork included
+- 💳 Full admin dashboard
+- 🛍️ Users can purchase and sell their own products
+- 🛒 Locally persisted shopping cart
+- 🔑 Authentication using Payload
+- 🖥️ Learn how to self-host Next.js
+- 🌟 Clean, modern UI using shadcn-ui
+- ✉️ Beautiful emails for signing up and after purchase
+- ✅ Admins can verify products to ensure high quality
+- ⌨️ 100% written in TypeScript
+- 🎁 ...much more
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Getting started
 
-## Learn More
+To get started with this project, run
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+  git clone https://github.com/joschan21/digitalhippo.git
+```
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
 
-## How do I deploy this?
+## Acknowledgements
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- [Payload](https://link.joshtriedcoding.com/payload) for making this project possible
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
