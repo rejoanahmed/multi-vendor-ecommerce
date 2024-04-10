@@ -83,6 +83,7 @@ const Cart = () => {
 										href="/cart"
 										className={buttonVariants({
 											className: "w-full",
+											variant: 'destructive',
 										})}
 									>
 										Continue to Checkout
