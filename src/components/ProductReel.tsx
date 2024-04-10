@@ -62,39 +62,37 @@ const ProductReel = (props: ProductReelProps) => {
 
   return (
     <section className='py-2'>
-      <div className='flex gap-3'>
-        <div>
-          <Label>Search</Label>
-          <Input
-            className='flex-grow'
-            placeholder='Search Product...'
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <Label>Min Price</Label>
-          <Input
-            className='flex-grow'
-            placeholder='Min Price'
-            type='number'
-            value={minPr}
-            onChange={(e) => setMinPr(e.target.value as unknown as number)}
-          />
-        </div>
-
-        <div>
-          <Label>Max Price</Label>
-          <Input
-            className='flex-grow'
-            placeholder='Max Price'
-            type='number'
-            value={maxPr}
-            onChange={(e) => setMaxPr(e.target.value as unknown as number)}
-          />
-        </div>
+    <div className='flex flex-col sm:flex-row gap-3 items-center pb-6'>
+      <Input
+        className='w-full h-16 px-4 rounded-full text-xl font-bold text-center placeholder-gray-300 border-2 border-red-500'
+        placeholder='Search Product...'
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+      />
+    </div>
+    <div className='flex gap-3'>
+      <div>
+        <Label>Min Price</Label>
+        <Input
+          className='w-full h-10 px-4 rounded-lg'
+          placeholder='Min Price'
+          type='number'
+          value={minPr}
+          onChange={(e) => setMinPr(e.target.value as unknown as number)}
+        />
       </div>
+
+      <div>
+        <Label>Max Price</Label>
+        <Input
+          className='w-full h-10 px-4 rounded-lg'
+          placeholder='Max Price'
+          type='number'
+          value={maxPr}
+          onChange={(e) => setMaxPr(e.target.value as unknown as number)}
+        />
+      </div>
+    </div>
       <div className='md:flex md:items-center md:justify-between mb-4'>
         <div className='max-w-2xl px-4 lg:max-w-4xl lg:px-0'>
           {title ? (
