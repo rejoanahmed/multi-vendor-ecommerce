@@ -21,7 +21,7 @@ const NavItem = () => {
 
   return (
     <div className='flex'>
-      <nav className='relative flex gap-5 items-center justify-center '>
+      <nav className='relative flex gap-5 items-center justify-center'>
         {routes.map((route) => (
           <Link
             key={route.href}
@@ -29,8 +29,8 @@ const NavItem = () => {
             className={cn(
               'gap=3.0',
               route.active
-                ? 'text-black dark:text-white'
-                : 'text-muted-foreground'
+                ? 'text-red-600 dark:text-white text-lg font-medium' // Updated color and font size
+                : 'text-red-600 dark:text-white text-lg font-medium'
             )}
           >
             {route.label}

@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <MaxWidthWrapper>
-        <div className='pt-12 pb-6 pr-12 pl-12 mx-auto text-center flex flex-col items-center max-w-3xl'>
+        <div className='pt-12 pb-2 pr-12 pl-12 mx-auto text-center flex flex-col items-center max-w-3xl'>
           <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
             Welcome to {' '}
             <span className='text-red-600'>Multi-Store</span>
