@@ -3,6 +3,6 @@ import Image from 'next/image'
 
 export const Icons = {
   logo: (props: LucideProps) => (
-    <Image src='/logo.jpeg' alt='Logo' width={100} height={25} />
+    <Image src='/logo-red.jpeg' alt='Logo' width={150} height={25} />
   )
 }
