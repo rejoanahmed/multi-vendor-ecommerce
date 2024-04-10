@@ -17,7 +17,7 @@ export const paymentRouter = router({
       }
 
       const payload = await getPayloadClient()
-      console.log('payload', payload)
+
       const { docs: products } = await payload.find({
         collection: 'products',
         where: {
@@ -26,9 +26,9 @@ export const paymentRouter = router({
           }
         }
       })
-      console.log('products', products)
+
       const filteredProducts = products.filter((prod) => Boolean(prod.priceId))
-      console.log('filteredProducts', filteredProducts)
+
       const order = await payload.create({
         collection: 'orders',
         data: {
@@ -38,7 +38,6 @@ export const paymentRouter = router({
         }
       })
 
-      console.log('order', order)
       const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = []
 
       filteredProducts.forEach((product) => {
@@ -56,7 +55,6 @@ export const paymentRouter = router({
         }
       })
 
-      console.log('line_items', line_items)
       try {
         const stripeSession = await stripe.checkout.sessions.create({
           success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
@@ -68,7 +66,6 @@ export const paymentRouter = router({
           },
           line_items
         })
-        console.log(stripeSession)
         return { url: stripeSession.url }
       } catch (err) {
         console.log(err)

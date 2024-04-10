@@ -7,8 +7,10 @@ import { Product } from '@/payload-types'
 
 const AddToCartButton = ({
   product,
+  disabled
 }: {
   product: Product
+  disabled: boolean
 }) => {
   const { addItem } = useCart()
   const [isSuccess, setIsSuccess] = useState<boolean>(false)
@@ -28,7 +30,9 @@ const AddToCartButton = ({
         setIsSuccess(true)
       }}
       size='lg'
-      className='w-full'>
+      className='w-full'
+      disabled={disabled}
+    >
       {isSuccess ? 'Added!' : 'Add to cart'}
     </Button>
   )
