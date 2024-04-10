@@ -33,6 +33,8 @@ const ProductReel = (props: ProductReelProps) => {
     (page) => page.items
   )
 
+  console.log(products)
+
   let map: (Product | null)[] = []
   if (products && products.length) {
     map = products
