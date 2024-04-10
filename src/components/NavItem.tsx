@@ -11,28 +11,14 @@ import { Label } from "@radix-ui/react-dropdown-menu";
 
 type Category = (typeof PRODUCT_CATEGORIES)[number];
 
-interface NavItemProps {
-	category: Category;
-	handleOpen: () => void;
-	close: () => void;
-	isOpen: boolean;
-	isAnyOpen: boolean;
-}
-
-const NavItem = ({
-	isAnyOpen,
-	category,
-	handleOpen,
-	close,
-	isOpen,
-}: NavItemProps) => {
+const NavItem = () => {
 	const pathname = usePathname();
 
 	const routes = [
 		{
 			href: `/products?category=electronics`,
 			label: "Electronics",
-			active: pathname === `/products?category=${category.value}`,
+			active: pathname === `/products?category=electronics`,
 		},
 		{
 			href: `/products?category=clothing`,
