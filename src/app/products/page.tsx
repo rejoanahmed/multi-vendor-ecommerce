@@ -1,8 +1,10 @@
+'use client'
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import ProductReel from '@/components/ProductReel'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { PRODUCT_CATEGORIES } from '@/config'
+import { useState } from 'react'
 
 type Param = string | string[] | undefined
 
@@ -24,12 +26,6 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
 
   return (
     <MaxWidthWrapper>
-      <div className='mt-10'>
-        <Label>Search</Label>
-        <div className='flex'>
-          <Input className='flex-grow' placeholder='' />
-        </div>
-      </div>
       <ProductReel
         title={label ?? 'Browse high-quality assets'}
         query={{
