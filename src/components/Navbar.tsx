@@ -13,14 +13,14 @@ const Navbar = async () => {
   const { user } = await getServerSideUser(nextCookies)
 
   return (
-    <div className='bg-white sticky z-50 top-0 inset-x-0 h-16'>
+    <div className='bg-white sticky z-40 top-0 inset-x-0 h-16'>
       <header className='relative bg-white'>
         <MaxWidthWrapper>
           <div className='border-b border-gray-200'>
-            <div className='flex h-16 items-center'>
+            <div className='flex h-20 items-center'>
               <div className='ml-4 flex lg:ml-0'>
                 <Link href='/'>
-                  <Icons.logo className='h-10 w-10' />
+                  <Icons.logo className='h-5 w-5' />
                 </Link>
               </div>
 
@@ -33,9 +33,9 @@ const Navbar = async () => {
                   {user ? null : (
                     <Link
                       href='/sign-in'
-                      className={buttonVariants({
+                      className={`${buttonVariants({
                         variant: 'ghost'
-                      })}
+                      })} py-6 px-10 text-xl`} // Added py-2, px-4, and text-lg classes for increased size
                     >
                       Sign in
                     </Link>
@@ -48,14 +48,14 @@ const Navbar = async () => {
                   {user ? (
                     <UserAccountNav user={user} />
                   ) : (
-                    <Link
-                      href='/sign-up'
-                      className={buttonVariants({
-                        variant: 'ghost'
-                      })}
-                    >
-                      Create account
-                    </Link>
+                  <Link
+                    href='/sign-up'
+                    className={`${buttonVariants({
+                      variant: 'ghost'
+                    })} bg-red-500 text-white py-6 px-10 text-xl`} // Added bg-red-500 and text-white classes
+                  >
+                    Register
+                  </Link>
                   )}
 
                   {user ? (

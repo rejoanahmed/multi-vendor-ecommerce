@@ -61,7 +61,7 @@ const ProductReel = (props: ProductReelProps) => {
   }
 
   return (
-    <section className='py-12'>
+    <section className='py-2'>
       <div className='flex gap-3'>
         <div>
           <Label>Search</Label>

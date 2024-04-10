@@ -29,18 +29,22 @@ export default function Home() {
   return (
     <>
       <MaxWidthWrapper>
-        <div className='py-20 mx-auto text-center flex flex-col items-center max-w-3xl'>
+        <div className='py-16 mx-auto text-center flex flex-col items-center max-w-3xl'>
           <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-            Your marketplace for high-quality{' '}
-            <span className='text-blue-600'>Products</span>.
+            Welcome to {' '}
+            <span className='text-red-600'>Multi-Store</span>
           </h1>
-          <p className='mt-6 text-lg max-w-prose text-muted-foreground'>
-            Welcome to mutlistore. We offer a wide range of products from
-            various categories. We are constantly updating our inventory to
-            provide you with the latest and greatest products.
-          </p>
+          <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl py-4'>
+            Best Place to {' '}
+            <span className='text-red-600'>Buy </span>
+            and {''}
+            <span className='text-red-600'>Sell</span>
+          </h1>
           <div className='flex flex-col sm:flex-row gap-4 mt-6'>
-            <Link href='/products' className={buttonVariants()}>
+            <Link
+              href='/products'
+              className={`${buttonVariants()} bg-red-500 text-white py-4 px-6 text-l`} // Added bg-red-500, text-white, py-2, px-4, and text-lg classes
+            >
               Browse Trending
             </Link>
           </div>
