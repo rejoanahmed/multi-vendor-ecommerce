@@ -62,39 +62,37 @@ const ProductReel = (props: ProductReelProps) => {
 
   return (
     <section className='py-12'>
-      <div className='mt-10'>
-        <div className='flex gap-3'>
-          <div>
-            <Label>Search</Label>
-            <Input
-              className='flex-grow'
-              placeholder='Search Product...'
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-            />
-          </div>
+      <div className='flex gap-3'>
+        <div>
+          <Label>Search</Label>
+          <Input
+            className='flex-grow'
+            placeholder='Search Product...'
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+          />
+        </div>
 
-          <div>
-            <Label>Min Price</Label>
-            <Input
-              className='flex-grow'
-              placeholder='Min Price'
-              type='number'
-              value={minPr}
-              onChange={(e) => setMinPr(e.target.value as unknown as number)}
-            />
-          </div>
+        <div>
+          <Label>Min Price</Label>
+          <Input
+            className='flex-grow'
+            placeholder='Min Price'
+            type='number'
+            value={minPr}
+            onChange={(e) => setMinPr(e.target.value as unknown as number)}
+          />
+        </div>
 
-          <div>
-            <Label>Max Price</Label>
-            <Input
-              className='flex-grow'
-              placeholder='Max Price'
-              type='number'
-              value={maxPr}
-              onChange={(e) => setMaxPr(e.target.value as unknown as number)}
-            />
-          </div>
+        <div>
+          <Label>Max Price</Label>
+          <Input
+            className='flex-grow'
+            placeholder='Max Price'
+            type='number'
+            value={maxPr}
+            onChange={(e) => setMaxPr(e.target.value as unknown as number)}
+          />
         </div>
       </div>
       <div className='md:flex md:items-center md:justify-between mb-4'>
