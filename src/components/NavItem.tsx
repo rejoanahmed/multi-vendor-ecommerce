@@ -30,12 +30,12 @@ const NavItem = ({
 
 	const routes = [
 		{
-			href: `/product?category=electronics`,
+			href: `/products?category=electronics`,
 			label: "Electronics",
 			active: pathname === `/products?category=${category.value}`,
 		},
 		{
-			href: `/product?category=clothing`,
+			href: `/products?category=clothing`,
 			label: "Clothing",
 			active: pathname === `/products?category=clothing`,
 		},
