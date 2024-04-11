@@ -73,12 +73,14 @@ const ProductReel = (props: ProductReelProps) => {
     <div className='flex gap-3'>
     <div className='max-w-6xl pr-4 lg:max-w-4xl lg:px-0'>
       </div>
-      <h2 className='text-2xl font-bold tracking-tight text-gray-900 sm:text-2xl py-4'>
-        Enter {' '}
-        <span className='text-red-600'>Starting Price </span>
-        and {''}
-        <span className='text-red-600'>Ending Price</span>
-      </h2>
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <h2 className='text-2xl font-bold tracking-tight text-gray-900 sm:text-2xl py-4'>
+          Enter {' '}
+          <span className='text-red-600'>Starting Price </span>
+          and {''}
+          <span className='text-red-600'>Ending Price</span>
+        </h2>
+      </div>
       <div className='ml-6'>
         <Label>Start Price ($)</Label>
         <Input
