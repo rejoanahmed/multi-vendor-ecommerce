@@ -43,9 +43,6 @@ export const appRouter = router({
           approvedForSale: {
             equals: 'approved'
           },
-          stock: {
-            greater_than: 0
-          },
           ...parsedQueryOpts
         },
         sort,
