@@ -1,5 +1,6 @@
 'use client'
 
+import { useCart } from '@/hooks/use-cart'
 import { trpc } from '@/trpc/client'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
@@ -10,19 +11,19 @@ interface PaymentStatusProps {
   isPaid: boolean
 }
 
-const PaymentStatus = ({
-  orderEmail,
-  orderId,
-  isPaid,
-}: PaymentStatusProps) => {
+const PaymentStatus = ({ orderEmail, orderId, isPaid }: PaymentStatusProps) => {
   const router = useRouter()
+
+  const removeAll = useCart((state) => state.clearCart)
+  if (isPaid) {
+    removeAll()
+  }
 
   const { data } = trpc.payment.pollOrderStatus.useQuery(
     { orderId },
     {
       enabled: isPaid === false,
-      refetchInterval: (data) =>
-        data?.isPaid ? false : 1000,
+      refetchInterval: (data) => (data?.isPaid ? false : 1000)
     }
   )
 
@@ -33,21 +34,13 @@ const PaymentStatus = ({
   return (
     <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-600'>
       <div>
-        <p className='font-medium text-gray-900'>
-          Shipping To
-        </p>
+        <p className='font-medium text-gray-900'>Shipping To</p>
         <p>{orderEmail}</p>
       </div>
 
       <div>
-        <p className='font-medium text-gray-900'>
-          Order Status
-        </p>
-        <p>
-          {isPaid
-            ? 'Payment successful'
-            : 'Pending payment'}
-        </p>
+        <p className='font-medium text-gray-900'>Order Status</p>
+        <p>{isPaid ? 'Payment successful' : 'Pending payment'}</p>
       </div>
     </div>
   )
