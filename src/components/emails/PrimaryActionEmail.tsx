@@ -84,7 +84,7 @@ const btnContainer = {
 
 const button = {
 	padding: "12px 12px",
-	backgroundColor: "#2563eb",
+	backgroundColor: "#FF0000",
 	borderRadius: "3px",
 	color: "#fff",
 	fontSize: "16px",
