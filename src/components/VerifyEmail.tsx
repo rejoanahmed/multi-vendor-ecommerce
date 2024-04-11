@@ -49,7 +49,7 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
           Thank you for verifying your email.
         </p>
         <Link
-          className={buttonVariants({ className: 'mt-4' })}
+          className={buttonVariants({ variant: 'destructive' })}
           href='/sign-in'>
           Sign in
         </Link>

@@ -43,7 +43,9 @@ export default function Home() {
           <div className='flex flex-col sm:flex-row gap-4 mt-6'>
             <Link
               href='/products'
-              className={`${buttonVariants()} bg-red-500 text-white py-4 px-6 text-l`} // Added bg-red-500, text-white, py-2, px-4, and text-lg classes
+              className={`${buttonVariants({
+                variant: 'ghost'
+              })} bg-red-500 text-white py-4 px-6 text-l`} // Added bg-red-500, text-white, py-2, px-4, and text-lg classes
             >
               Browse Trending
             </Link>
