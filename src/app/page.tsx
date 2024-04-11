@@ -1,8 +1,8 @@
-import MaxWidthWrapper from '@/components/MaxWidthWrapper'
-import ProductReel from '@/components/ProductReel'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react'
-import Link from 'next/link'
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import ProductReel from "@/components/ProductReel";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
+import Link from "next/link";
 
 // const perks = [
 //   {
@@ -26,38 +26,36 @@ import Link from 'next/link'
 // ]
 
 export default function Home() {
-  return (
-    <>
-      <MaxWidthWrapper>
-        <div className='pt-12 pb-2 pr-12 pl-12 mx-auto text-center flex flex-col items-center max-w-3xl'>
-          <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-            Welcome to {' '}
-            <span className='text-red-600'>Multi-Store</span>
-          </h1>
-          <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl py-4'>
-            Best Place to {' '}
-            <span className='text-red-600'>Buy </span>
-            and {''}
-            <span className='text-red-600'>Sell</span>
-          </h1>
-          <div className='flex flex-col sm:flex-row gap-4 mt-6'>
-            <Link
-              href='/products'
-              className={`${buttonVariants()} bg-red-500 text-white py-4 px-6 text-l`} // Added bg-red-500, text-white, py-2, px-4, and text-lg classes
-            >
-              Browse Trending
-            </Link>
-          </div>
-        </div>
+	return (
+		<>
+			<MaxWidthWrapper>
+				<div className="pt-12 pb-2 pr-12 pl-12 mx-auto text-center flex flex-col items-center max-w-3xl">
+					<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+						Welcome to <span className="text-red-600">Multi-Store</span>
+					</h1>
+					<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl py-4">
+						Best Place to <span className="text-red-600">Buy </span>
+						and {""}
+						<span className="text-red-600">Sell</span>
+					</h1>
+					<div className="flex flex-col sm:flex-row gap-4 mt-6">
+						<Link
+							href="/products"
+							className={`${buttonVariants()} bg-red-500 text-white py-4 px-6 text-l`} // Added bg-red-500, text-white, py-2, px-4, and text-lg classes
+						>
+							Browse Trending
+						</Link>
+					</div>
+				</div>
 
-        <ProductReel
-          query={{ sort: 'desc', limit: 4 }}
-          href='/products?sort=recent'
-          title='Brand new'
-        />
-      </MaxWidthWrapper>
+				<ProductReel
+					query={{ sort: "desc", limit: 4 }}
+					href="/products?sort=recent"
+					title="New collection"
+				/>
+			</MaxWidthWrapper>
 
-      {/* <section className='border-t border-gray-200 bg-gray-50'>
+			{/* <section className='border-t border-gray-200 bg-gray-50'>
         <MaxWidthWrapper className='py-20'>
           <div className='grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0'>
             {perks.map((perk) => (
@@ -83,6 +81,6 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section> */}
-    </>
-  )
+		</>
+	);
 }
