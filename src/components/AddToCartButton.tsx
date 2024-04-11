@@ -31,6 +31,7 @@ const AddToCartButton = ({
       }}
       size='lg'
       className='w-full'
+      variant= 'destructive'
       disabled={disabled}
     >
       {isSuccess ? 'Added!' : 'Add to cart'}

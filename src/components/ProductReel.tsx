@@ -62,58 +62,57 @@ const ProductReel = (props: ProductReelProps) => {
 
   return (
     <section className='py-2'>
-      <div className='flex gap-3'>
-        <div>
-          <Label>Search</Label>
-          <Input
-            className='flex-grow'
-            placeholder='Search Product...'
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <Label>Min Price</Label>
-          <Input
-            className='flex-grow'
-            placeholder='Min Price'
-            type='number'
-            value={minPr}
-            onChange={(e) => setMinPr(e.target.value as unknown as number)}
-          />
-        </div>
-
-        <div>
-          <Label>Max Price</Label>
-          <Input
-            className='flex-grow'
-            placeholder='Max Price'
-            type='number'
-            value={maxPr}
-            onChange={(e) => setMaxPr(e.target.value as unknown as number)}
-          />
-        </div>
+    <div className='flex flex-col sm:flex-row gap-3 items-center pb-6 pt-6'>
+      <Input
+        className='w-full h-16 px-4 rounded-full text-xl font-bold text-center placeholder-gray-300 border-2 border-red-500'
+        placeholder='Search Product...'
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+      />
+    </div>
+    <div className='flex gap-3'>
+      <div>
+        <Label>Min Price</Label>
+        <Input
+          className='w-full h-10 px-4 rounded-lg'
+          placeholder='Min Price'
+          type='number'
+          value={minPr}
+          onChange={(e) => setMinPr(e.target.value as unknown as number)}
+        />
       </div>
+
+      <div>
+        <Label>Max Price</Label>
+        <Input
+          className='w-full h-10 px-4 rounded-lg'
+          placeholder='Max Price'
+          type='number'
+          value={maxPr}
+          onChange={(e) => setMaxPr(e.target.value as unknown as number)}
+        />
+      </div>
+    </div>
+    <div className="py-6">
       <div className='md:flex md:items-center md:justify-between mb-4'>
-        <div className='max-w-2xl px-4 lg:max-w-4xl lg:px-0'>
-          {title ? (
-            <h1 className='text-2xl font-bold text-gray-900 sm:text-3xl'>
-              {title}
-            </h1>
-          ) : null}
-          {subtitle ? (
-            <p className='mt-2 text-sm text-muted-foreground'>{subtitle}</p>
-          ) : null}
-        </div>
+      <div className='max-w-6xl px-4 lg:max-w-4xl lg:px-0'>
+        {title ? (
+          <h1 className='text-7xl font-bold text-red-600 sm:text-4xl'> 
+            {title}
+          </h1>
+        ) : null}
+        {subtitle ? (
+          <p className='mt-2 text-xl text-red-500'>{subtitle}</p> 
+        ) : null}
+      </div>
 
         {href ? (
           <Link
-            href={href}
-            className='hidden text-sm font-medium text-blue-600 hover:text-blue-500 md:block'
-          >
-            Shop the collection <span aria-hidden='true'>&rarr;</span>
-          </Link>
+          href={href}
+          className='hidden text-lg font-medium text-red-500 hover:text-red-500 md:block'
+        >
+          Shop the collection <span aria-hidden='true'>&rarr;</span>
+        </Link>
         ) : null}
       </div>
 
@@ -130,6 +129,7 @@ const ProductReel = (props: ProductReelProps) => {
           </div>
         </div>
       </div>
+    </div>
     </section>
   )
 }
