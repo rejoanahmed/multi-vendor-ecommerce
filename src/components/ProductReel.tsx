@@ -71,10 +71,20 @@ const ProductReel = (props: ProductReelProps) => {
       />
     </div>
     <div className='flex gap-3'>
-      <div>
-        <Label>Min Price</Label>
+    <div className='max-w-6xl pr-4 lg:max-w-4xl lg:px-0'>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <h2 className='text-2xl font-bold tracking-tight text-gray-900 sm:text-2xl py-4'>
+          Enter {' '}
+          <span className='text-red-600'>Starting Price </span>
+          and {''}
+          <span className='text-red-600'>Ending Price</span>
+        </h2>
+      </div>
+      <div className='ml-6'>
+        <Label>Start Price ($)</Label>
         <Input
-          className='w-full h-10 px-4 rounded-lg'
+          className='w-full h-10 px-4 rounded-lg border-2 border-red-500'
           placeholder='Min Price'
           type='number'
           value={minPr}
@@ -83,9 +93,9 @@ const ProductReel = (props: ProductReelProps) => {
       </div>
 
       <div>
-        <Label>Max Price</Label>
+        <Label>End Price ($)</Label>
         <Input
-          className='w-full h-10 px-4 rounded-lg'
+          className='w-full h-10 px-4 rounded-lg border-2 border-red-500'
           placeholder='Max Price'
           type='number'
           value={maxPr}
@@ -95,9 +105,9 @@ const ProductReel = (props: ProductReelProps) => {
     </div>
     <div className="py-6">
       <div className='md:flex md:items-center md:justify-between mb-4'>
-      <div className='max-w-6xl px-4 lg:max-w-4xl lg:px-0'>
+      <div className='max-w-6xl pr-4 lg:max-w-4xl lg:px-0'>
         {title ? (
-          <h1 className='text-7xl font-bold text-red-600 sm:text-4xl'> 
+          <h1 className='text-7xl font-bold text-black-600 sm:text-4xl'> 
             {title}
           </h1>
         ) : null}
