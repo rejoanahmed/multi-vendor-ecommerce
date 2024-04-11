@@ -123,13 +123,13 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                         </div>
 
                         {order._isPaid ? (
-                          <a
-                            href={downloadUrl}
+                          <Link
+                            href={'/trackorder'}
                             download={product.name}
                             className='text-red-600 hover:underline underline-offset-2'
                           >
                             Track Order
-                          </a>
+                          </Link>
                         ) : null}
                       </div>
 
